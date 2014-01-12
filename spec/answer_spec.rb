@@ -7,6 +7,8 @@ describe Answer do
     let(:three) { Card.new(:black, :yello, :circle, 3) }
     it { expect(set.match?).to be_true }
     it { expect(set.location).to eq([1, 2, 3]) }
+    it { expect(set.used?).to be_false }
+    it { set.used?;expect(set.used?).to be_true }
   end
 
   context "all diff bg, all same color, all same shape" do

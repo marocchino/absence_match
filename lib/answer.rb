@@ -1,13 +1,17 @@
 class Answer
-  def initialize(*answers)
-    @answers = answers
+  def initialize(*cards)
+    @cards = cards
   end
 
   def match?
-    [:bg, :color, :shape].all? {|attr| [1,3].include? @answers.map(&attr).uniq.size }
+    [:bg, :color, :shape].all? {|attr| [1,3].include? @cards.map(&attr).uniq.size }
+  end
+
+  def used?
+    defined?(@used) || @used = false
   end
 
   def location
-    @answers.map(&:location).sort
+    @cards.map(&:location).sort
   end
 end
