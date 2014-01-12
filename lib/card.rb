@@ -1,3 +1,1 @@
-Card = Struct.new(:bg, :color, :shape, :location) do
-
-end
+Card = Struct.new(:bg, :color, :shape, :location)
