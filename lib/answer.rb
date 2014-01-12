@@ -1,6 +1,6 @@
 class Answer
   def initialize(*cards)
-    @cards = cards
+    @cards = cards.sort_by(&:location)
   end
 
   def match?
@@ -8,7 +8,12 @@ class Answer
   end
 
   def used?
-    defined?(@used) || @used = false
+    @user
+  end
+
+  def match_by?(user)
+    @user = user
+    match?
   end
 
   def location
