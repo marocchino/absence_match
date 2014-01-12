@@ -8,15 +8,14 @@ class Answer
   end
 
   def used?
-    @user
+    @use
   end
 
-  def match_by?(user)
-    @user = user
-    match?
+  def use
+    @use = true
   end
 
   def location
-    @cards.map(&:location).sort
+    @cards.map(&:location)
   end
 end
